@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -12,8 +12,31 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="TaskForm" component={TaskFormScreen} />
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={({navigation}) => ({
+            title: 'Tasks App',
+            headerStyle: {backgroundColor: '#222f3e'},
+            headerTitleStyle: { backgroundColor: '#222f3e', color: '#fff' },
+            headerRight: () => (
+              <TouchableOpacity onPress={() => navigation.navigate('TaskForm')}>
+                <Text style={{color: '#fff', marginRight: 20}}>New</Text>
+              </TouchableOpacity>
+              )
+            })
+          }
+        />
+        <Stack.Screen 
+          name="TaskForm" 
+          component={TaskFormScreen}
+          options={{
+            title: 'New Task',
+            headerStyle: {backgroundColor: '#222f3e'},
+            headerTitleStyle: { backgroundColor: '#222f3e', color: '#fff' },
+            headerTintColor: '#fff'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
