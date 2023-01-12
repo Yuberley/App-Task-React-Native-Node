@@ -16,7 +16,7 @@ const App = () => {
           name="Home" 
           component={HomeScreen} 
           options={({navigation}) => ({
-            title: 'Tasks App',
+            title: 'Tasks App 🚀',
             headerStyle: {backgroundColor: '#222f3e'},
             headerTitleStyle: { backgroundColor: '#222f3e', color: '#fff' },
             headerRight: () => (
@@ -31,7 +31,7 @@ const App = () => {
           name="TaskForm" 
           component={TaskFormScreen}
           options={{
-            title: 'New Task',
+            title: 'New Task 📑',
             headerStyle: {backgroundColor: '#222f3e'},
             headerTitleStyle: { backgroundColor: '#222f3e', color: '#fff' },
             headerTintColor: '#fff'

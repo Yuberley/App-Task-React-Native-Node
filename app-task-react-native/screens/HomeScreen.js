@@ -7,7 +7,7 @@ import TaskList from '../components/TaskList';
 const HomeScreen = () => {
 	return (
 		<Layout>
-      <TaskList />
+      		<TaskList />
 		</Layout>
 	);
 };

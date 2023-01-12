@@ -22,3 +22,14 @@ export const deleteTask = async (id) => {
         method: 'DELETE'
     });
 }
+
+export const updateTask = async (task) => {
+    const response = await fetch(`${environment.apiUrl}/task/${task.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(task)
+    });
+    return await response.json();
+}
